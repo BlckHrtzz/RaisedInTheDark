@@ -61,7 +61,8 @@ public class CharacterController : MonoBehaviour
         Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
         finalRotation = Quaternion.Lerp(rBody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
-        transform.rotation = finalRotation;
+        //transform.rotation = finalRotation;
+        rBody.MoveRotation(finalRotation);
 
     }
 }
